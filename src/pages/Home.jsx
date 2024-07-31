@@ -12,7 +12,7 @@ const Home = () => {
              <HomeCardCaroasel/>
         </div>
         <hr className='line-btwn'/>
-        <h3 className='home-headings'>Best seller this week</h3>
+        <h3 className='home-headings'>All time favourites</h3>
     <div >
     <HomeBestSeller/>
 </div>

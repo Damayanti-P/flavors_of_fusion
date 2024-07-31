@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+// import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Button } from '@mui/material';

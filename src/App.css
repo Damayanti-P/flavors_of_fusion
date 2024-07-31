@@ -28,6 +28,7 @@
   body{
     height: 100% !important;
     width: 100% !important;
+    /* background-color: #fdfdfd !important; */
    }
 
 .navbar-brand
@@ -47,8 +48,11 @@
   margin-left: 10px;
   width: 100px !important;
 }
+.search{
+  margin-left: 500px;
+}
 div.cartclass{
-  margin-left: 750px;
+ 
 }
 .cart
 {
@@ -57,7 +61,8 @@ div.cartclass{
 }
 .navbar
 {
-  background-color:#d6ccc2 !important;
+  background-color:white !important;
+  box-shadow: 1px 2px 16px rgb(219, 216, 216);
   position: fixed !important; 
   top: 0; 
   left: 0; 
@@ -178,22 +183,25 @@ div.cartclass{
 }
 .heading-div
 {
+
   padding: 1rem;
 }
 /* text-lg font-medium text-gray-900 */
 .heading{
+  font-family: cursive;
   font-size: 1.125rem;
   font-weight: 500;
   color: #1a202c;
 
 }
 .description{
+  
   color: #6b7280;
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 .home-main-div{
-  margin-top: 80px;
+  margin-top: 100px;
 }
 .home-card-carousel {
   position: relative;
@@ -267,4 +275,7 @@ div.cartclass{
 .home-headings{
   font-family: cursive;
   font-weight: bold;
+}
+.footer-heading{
+  margin-top: 30px  !important;
 }
