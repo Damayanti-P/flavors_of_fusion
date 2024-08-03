@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useAppContext } from '../features/AppProvider';
 
 function NavBar() {
-
+  const {count}=useAppContext();
 
   return (
     <>
@@ -22,15 +23,15 @@ function NavBar() {
             <Link to="/menu" className="nav-item nav-link navCenter" >Menu</Link>
             {/* <Link to="/contactUs" className="nav-item nav-link navCenter">Contact Us</Link>  */}
 
-            <form class="d-flex search" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button class="btn " type="submit"><SearchIcon color='primary'/></button>
+            <form className="d-flex search" role="search">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn " type="submit"><SearchIcon color='primary'/></button>
             </form>
           </div>
           <div className="cartclass">
-            <a className="nav-item nav-link cartAdjust" href="#cart">
+            <a className="nav-item nav-link cartAdjust" href="/cart">
               <div className="cart-container">
-                <span className="cart-count">{0}</span>
+                <span className="cart-count">{count}</span>
                 <ShoppingCartIcon sx={{ fontSize: 30 }} />
               </div>
             </a>
