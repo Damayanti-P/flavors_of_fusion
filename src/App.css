@@ -291,3 +291,11 @@ div.cartclass{
   display: flex;
   justify-content: center;
 }
+.cartPage{
+  width: 1000px;
+}
+.cartPageMain{
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+}

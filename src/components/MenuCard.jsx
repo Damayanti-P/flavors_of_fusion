@@ -4,17 +4,49 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import MenuData from './Data/MenuData';
 import { useAppContext } from '../features/AppProvider';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// toast.configure();
 
 const MenuCard = ({ activeTabKey2 }) => {
-    const {count,setCount}=useAppContext();
+    const { cartItems, setCartItems} = useAppContext();
+
     const data = MenuData.filter(item => item.key === activeTabKey2);
-    const Removefromcart=()=>{
-        setCount((count)=>count-1);
-    }
-    const Addtocart=()=>{
-        setCount((count)=>count+1);
-    }
-    console.log(count)
+
+    const Removefromcart = (id) => {
+        if (cartItems[id]?.count > 0) {
+            setCartItems((prevItems) => {
+                const updatedItems = { ...prevItems };
+                updatedItems[id].count -= 1;
+                if (updatedItems[id].count <= 0) {
+                    delete updatedItems[id];
+                }
+
+                return updatedItems;
+            });
+        } else {
+            toast.info("Cart is Empty", {
+                position: "bottom-left",
+            });
+        }
+    };
+
+    const Addtocart = (id, title, price, des, img) => {
+        setCartItems((prevItems) => ({
+            ...prevItems,
+            [id]: {
+                count: (prevItems[id]?.count || 0) + 1,
+                title,
+                price,
+                des,
+                img,
+            }
+        }) );
+    };
+
+    console.log(cartItems);
+
     return (
         <>
             {data.map((ele) => (
@@ -34,9 +66,9 @@ const MenuCard = ({ activeTabKey2 }) => {
                                 }}
                             />
                             <div className='menu-card-icons' style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
-                                <RemoveIcon onClick={Removefromcart}/>  
-                                <span style={{ margin: '0 10px' }}>{}</span>
-                                <AddIcon  onClick={Addtocart}/>
+                                <RemoveIcon onClick={() => Removefromcart(ele.id)} />
+                                <span style={{ margin: '0 10px' }}>{cartItems[ele.id]?.count || 0}</span>
+                                <AddIcon onClick={() => Addtocart(ele.id, ele.title, ele.price, ele.des, ele.img)} />
                             </div>
                         </div>
                     </div>
@@ -44,6 +76,6 @@ const MenuCard = ({ activeTabKey2 }) => {
             ))}
         </>
     );
-}
+};
 
 export default MenuCard;

@@ -29,12 +29,13 @@ function NavBar() {
             </form>
           </div>
           <div className="cartclass">
-            <a className="nav-item nav-link cartAdjust" href="/cart">
+            {/* <a className="nav-item nav-link cartAdjust" href="/cart"> */}
+            <Link to="/cart" className="nav-item nav-link cartAdjust">
               <div className="cart-container">
                 <span className="cart-count">{count}</span>
                 <ShoppingCartIcon sx={{ fontSize: 30 }} />
               </div>
-            </a>
+            </Link>
            
           </div>
           <AccountCircleIcon sx={{ fontSize: 40 }}  />
