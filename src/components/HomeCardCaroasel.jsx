@@ -43,7 +43,8 @@ const HomeCardCaroasel = () => {
     const items = HomecardCaroesalImg.map((item, index) => (
         <div
             key={index}
-            onClick={() => navigate(`/menu?key=${item.key}`)} // Navigate with query parameter
+            onClick={() => navigate(`/menu?key=${item.key}`) 
+           } // Navigate with query parameter
             style={{ cursor: 'pointer' }} // Make items clickable
         >
             <HomeSectionCard dish={item} />
