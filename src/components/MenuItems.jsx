@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Card } from 'antd';
+import { useLocation } from 'react-router-dom';
 import MenuItemsData from './Data/MenuItemsData';
 import MenuCard from './MenuCard';
 
-const MenuItems = ({ initialTabKey }) => {
-    const [activeTabKey2, setActiveTabKey2] = useState(initialTabKey || 'Pizza');
-   
+const MenuItems = () => {
+    const location = useLocation(); // Get the current URL
+    const queryParams = new URLSearchParams(location.search); // Parse query params
+    const initialCategory = queryParams.get('key') || 'Pizza'; // Default to 'Pizza'
+
+    const [activeTabKey2, setActiveTabKey2] = useState(initialCategory);
     const onTab2Change = (key) => {
         setActiveTabKey2(key);
     };
