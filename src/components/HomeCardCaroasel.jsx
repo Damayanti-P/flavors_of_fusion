@@ -7,8 +7,11 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import { Button } from '@mui/material';
 import { HomecardCaroesalImg } from './Data/HomecardCaroesalImg';
 
-const HomeCardCaroasel = () => {
+
+const HomeCardCaroasel = ({ onCategorySelect }) => {
     const [activeIndex, setActiveIndex] = useState(0);
+    // const {setSelectedCategory}=useAppContext();
+
     const carouselRef = useRef(null);
 
     const responsive = {
@@ -36,7 +39,9 @@ const HomeCardCaroasel = () => {
     };
 
     const items = HomecardCaroesalImg.map((item, index) => (
-        <HomeSectionCard key={index} dish={item} />
+        <div onClick={() => onCategorySelect(item.key)} key={index}>
+            <HomeSectionCard dish={item} />
+        </div>
     ));
 
     return (

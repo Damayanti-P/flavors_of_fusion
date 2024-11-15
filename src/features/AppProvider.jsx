@@ -7,13 +7,14 @@ const useAppContext=()=>{
 const AppProvider = ({children}) => {
     const[count,setCount]=useState(0);
     const[cartItems, setCartItems ]=useState({});
+    const [selectedCategory, setSelectedCategory] = useState('Pizza');
     useEffect(() => {
       const total = Object.values(cartItems).length
       setCount(total);
   }, [cartItems]);
 
   return (
-    <appContext.Provider value={{count,cartItems, setCartItems }}>
+    <appContext.Provider value={{count,cartItems, setCartItems ,selectedCategory, setSelectedCategory}}>
         {children}
     </appContext.Provider>
   )

@@ -3,8 +3,8 @@ import { Card } from 'antd';
 import MenuItemsData from './Data/MenuItemsData';
 import MenuCard from './MenuCard';
 
-const MenuItems = () => {
-    const [activeTabKey2, setActiveTabKey2] = useState('Pizza');
+const MenuItems = ({ initialTabKey }) => {
+    const [activeTabKey2, setActiveTabKey2] = useState(initialTabKey || 'Pizza');
    
     const onTab2Change = (key) => {
         setActiveTabKey2(key);
