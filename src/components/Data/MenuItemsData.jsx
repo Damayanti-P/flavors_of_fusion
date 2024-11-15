@@ -18,12 +18,8 @@ const MenuItemsData =[
         label: 'North Indian',
     },
     {
-        key: 'Noodles',
-        label: 'Noodles',
-    },
-    {
-        key: 'Cakes',
-        label: 'Cakes',
+        key: 'Chinese',
+        label: 'Chinese',
     },
     {
         key: 'PureVeg',
