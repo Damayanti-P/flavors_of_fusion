@@ -5,6 +5,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import emptyCart from '../imgs/emptyCart.png'
 
 const CartPage = () => {
   const { cartItems, setCartItems } = useAppContext();
@@ -48,9 +49,18 @@ const CartPage = () => {
   return (
     <div className='cartPageMain'>
       <div className='cartPage' style={{ padding: '20px', marginTop: '88px' }}>
-        <h2>Your Cart</h2>
+        <h1>Your Cart</h1>
         {Object.keys(cartItems).length === 0 ? (
-          <p>Your cart is empty.</p>
+          <div class="empty-cart">
+          <div class="content">
+            <img
+              src= {emptyCart}
+              alt="Empty Cart"
+              class="empty-cart-image"
+            />
+            <h1>Your Cart is Empty</h1>
+          </div>
+        </div>
         ) : (
           Object.entries(cartItems).map(([id, item]) => (
             <Card key={id} style={{ marginBottom: '20px' }}>

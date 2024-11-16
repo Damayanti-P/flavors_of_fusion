@@ -299,3 +299,48 @@ div.cartclass{
   align-items: center ;
   justify-content: center ;
 }
+/* General styles for the empty cart page */
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  /* background-color: #f7f7f7; */
+  text-align: center;
+}
+
+.empty-cart .content {
+  max-width: 600px;
+  padding: 10px;
+}
+
+.empty-cart-image {
+  max-width: 100%; /* Ensures the image scales with the container */
+  height: auto;    /* Maintains the aspect ratio */
+  margin-bottom: 20px;
+  border-radius: 10px; /* Adds smooth corners to the image */
+  
+}
+
+.empty-cart h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .empty-cart h1 {
+    font-size: 1.5rem;
+  }
+  
+  .empty-cart .content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-cart h1 {
+    font-size: 1.2rem;
+  }
+}
+
